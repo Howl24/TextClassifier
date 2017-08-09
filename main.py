@@ -1,4 +1,5 @@
 from interface import Interface
+from sample_generator import SampleGenerator
 
 SAMPLE_GENERATOR = "Generador de Muestras"
 CAREER_CLASSIFIER = "Clasificador de Carreras"
@@ -14,21 +15,22 @@ MODE_MSG = "Escoja una opción: "
 
 def replace_out():
     import sys
+    file = open('foo.err', 'w')
+    sys.stdout = file
+    sys.stderr = file
 
-    with open('foo.err', 'w') as file:
-        sys.stdout = file
-        sys.stderr = file
+
+def generate_sample(view):
+    sample = SampleGenerator(view)
+    sample.run()
+    print('foo')
 
 
-def generate_sample():
+def run_career_classifier(view):
     pass
 
 
-def run_career_classifier():
-    pass
-
-
-def run_text_classifier():
+def run_text_classifier(view):
     pass
 
 
