@@ -1,0 +1,132 @@
+1. Clasificador de Carreras
+
+* Descripción:
+  Este proyecto consiste en la creación de un clasificador de carreras para
+  convocatorias. El clasificador indicará si la convocatoria pertenece
+  o no a una clase.
+
+  Entrada:
+    - Convocatorias etiquetadas de symplicity.
+    - Diccionario de frases de una carrera.
+    - Convocatorias a clasificar.
+
+  Salida:
+    - Convocatorias etiquetadas como pertenecientes o no a una  carrera.
+
+* Historias de Usuario:
+  - Actualizar listado de carreras
+    Opcion del Menú
+    Busca las carreras del listado de ofertas de symplicity
+    Actualiza tabla de carreras
+
+  - Escoger carrera a revisar
+    Selecciona de una carrera de un listado
+      
+  - Escoger diccionario a utilizar
+    Selecciona un diccionario de un listado
+
+  - Seleccionar convocatorias etiquetadas
+    Filtro por carrera seleccionada
+
+  - Entrenar el clasificador
+    Escoge carrera
+    Selecciona diccionario
+    Selecciona convocatorias por carrera
+    Entrena el clasificador
+    Muestra precisión del clasificador
+
+  - Seleccionar convocatorias a clasificar
+    Seleccion por:
+     - Fuente
+     - Rango de Fechas
+     - Features
+
+  - Resultados de predicción.
+    Indica número de convocatorias clasificadas
+    Actualiza las carreras de las convocatorias clasificadas
+
+  - Prediccion del clasificador
+    Opción del Menú
+    Entrenamiento del clasificador.
+    Seleccion de convocatorias a clasificar
+    Resultados de predicción
+
+
+2. Generador de Muestras
+
+* Descripción:
+  Este proyecto consiste en la selección de un grupo de convocatorias
+  para ser utilizadas posteriormente en una clasificación de textos.
+  Para esto, se escogerá un diccionario y se seleccionaran las convocatorias
+  procurando que todas las palabras del diccionario aparezcan por lo menos un 
+  número N de veces. La razón de esta condición es para que el clasificador
+  pueda utilizar revisar todas las palabras del diccionario.
+
+  Entrada:
+    - Diccionario de carrera
+    - Convocatorias a filtrar
+
+  Salida:
+    - Muestra de Convocatorias
+
+* Historias de Usuario:
+  - Escoger diccionario a utilizar
+    Selecciona un diccionario de un listado
+
+  - Escoger cantidad mínima por palabra
+    Ingresa número entero no negativo
+     - Validar dato ingresado
+
+  - Seleccionar convocatorias a filtrar
+    Seleccion por:
+     - Fuente
+     - Rango de Fechas
+     - Features*
+     - Carrera
+
+  - Elaboración de Muestra
+    Obtener convocatorias random y remover las revisadas
+    Actualizar contador de palabras en convocatoria
+    Exportar convocatorias en csv
+
+
+3. Clasificador de Textos
+
+* Descripción:
+  Este proyecto consiste en la clasificación de un conjunto de convocatorias 
+  utilizando un diccionario y un conjunto de datos de entrenamiento.
+
+  Entrada:
+    - Diccionario
+    - Muestra etiquetada
+    - Convocatorias a clasificar
+
+  Salida:
+    - Convocatorias clasificadas
+
+* Historias de Usuario:
+  - Escoger diccionario a utilizar
+    Selecciona un diccionario de un listado
+    
+  - Seleccionar archivo con muestra etiquetada
+    Selecciona un archivo de una lista dentro de la carpeta Muestras
+
+  - Entrenar clasificador
+    Escoge diccionario
+    Selecciona muestra
+    Entrena el clasificador
+    Muestra precisión del clasificador
+
+  - Seleccionar convocatorias a clasificar
+    Selección por:
+      - Fuente
+      - Rango de Fechas
+      - Features
+      - Carrera
+
+  - Predicción del clasificador
+    Opción del menú
+    Entrenamiento del clasificador
+    Seleccion de convocatorias a clasificar
+    Indicar número de convocatorias clasificadas
+    Exportar convocatorias clasificadas a csv
