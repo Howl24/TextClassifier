@@ -117,6 +117,28 @@ class Offer:
             return cls.ByCassandraRows(selected_rows)
 
     @classmethod
+    def ByDateRange(cls, min_date, max_date, source):
+        min_month = min_date[0]
+        min_year = min_date[1]
+
+        max_month = max_date[0]
+        max_year = max_date[1]
+
+        cls.SetKeyspace(source)
+        rows = cls.session.execute(cls.select_all_stmt)
+
+        if not rows:
+            return None
+
+        else:
+            selected_rows = []
+            for row in rows:
+                pass
+
+
+
+
+    @classmethod
     def ByCassandraRows(cls, rows):
         offers = []
         for row in rows:

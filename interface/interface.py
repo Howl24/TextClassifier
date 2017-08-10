@@ -43,6 +43,7 @@ class Interface:
         return min_val, max_val
 
     def read_int(self, msg, int_range, row=1):
+        self.stdscr.keypad(1)
         # Check int_range format
         try:
             min_val, max_val = self._check_int_range_format(int_range)
