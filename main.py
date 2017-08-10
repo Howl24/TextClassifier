@@ -23,7 +23,6 @@ def replace_out():
 def generate_sample(view):
     sample = SampleGenerator(view)
     sample.run()
-    print('foo')
 
 
 def run_career_classifier(view):
@@ -42,7 +41,7 @@ def main():
 
     mode = None
     while (mode != CLOSE):
-        mode = view.choose_option(MODE_MSG, MODES)
+        mode = view.choose_option(MODES, MODE_MSG)
         if mode == SAMPLE_GENERATOR:
             generate_sample(view)
         if mode == CAREER_CLASSIFIER:

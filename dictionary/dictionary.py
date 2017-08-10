@@ -225,11 +225,12 @@ class Dictionary:
     def GetDictionaryNames(cls):
         
         cmd = """
-              SELECT DISTINCT dict_name FROM {0};
-              """.format(cls.phrase_table_name)
+              SELECT DISTINCT name FROM {0};
+              """.format(cls.conf_table_name)
 
-        result = list(cls.session.execute(cmd))
-        return result
+        result = cls.session.execute(cmd)
+        dict_names = [x.name for x in result]
+        return dict_names
 
     def add_configuration(self, source, features, ngrams, dfs, last_bow):
         """Add source to container and map features"""
